@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <style>
+  .wrapper {
+    margin: 0 auto;
+    width: 1000px;
+    margin-top: 200px;
+  }
+
+  #question {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  #buttons {
+    text-align:center;
+  }
+
+  .button {
+    margin: 10px;
+    width: 100px;
+    height: 40px;
+    background: #EEE;
+    border: 1px solid #DDD;
+    border-radius: 8px;
+    color: #111;
+    font-size: 20px;
+    outline: none;
+  }
+
+  .button:hover {
+    background-color: #a1d7e0;
+    cursor: pointer;
+  }
+
+  </style>
+
+  <title>課題2.1</title>
+</head>
+<body>
+
+  <h2>開成高校　1年　4組　42番　　　松本 欣希</h2>
+
+  <div class="wrapper">
+    <h1>「著作権」・「肖像権」に関するマルバツクイズ</h1>
+    <div id="question"></div>
+    <div id="buttons">
+      <input type="button" class="button" value="○" onclick="hantei(1)">
+      <input type="button" class="button" value="×" onclick="hantei(2)">
+    </div>
+  </div>
+
+
+  <script type="text/javascript">
+
+  var qa = [
+ 	['政府が発行した白書には、著作権が発生しない。', 2],
+ 	['文化庁に対して著作権登録の申請を行わなかった場合、特許権と同様に著作権は認められない。', 2],
+    ['映画の著作物の著作権の保護期間は、監督の死後50年である。', 2],
+    ['著作物を無断で中古販売することは、厳密には著作権の侵害にあたる。', 2],
+    ['私立学校は、営利目的で設置されている学校なので、著作権法第35条が適用されず、授業で著作物を複製する場合には著作権者の許諾を得る必要がある。', 2],
+    ['卒業アルバムへの掲載に関して許諾を得た写真を、学校のホームページに掲載する場合、既に顔写真の公表の許諾は得ているので、無断でホームページに掲載しても肖像権の侵害にはあたらない。', 2],
+  ];
+
+  var count = 0;
+  var correctNum = 0;
+
+  window.onload = function() {
+    // 最初の問題を表示
+    var question = document.getElementById('question');
+    question.innerHTML = (count + 1) + '問目：' + qa[count][0];
+  };
+
+  // クリック時の答え判定
+  function hantei(btnNo) {
+    if (qa[count][1] == btnNo) {
+      correctNum++;
+    }
+
+    if (count == 5) {
+      alert('あなたの正解数は' + correctNum + '問です！');
+    }
+
+    // 次の問題表示
+    count++;
+    var question = document.getElementById('question');
+    question.innerHTML = (count + 1) + '問目：' + qa[count][0];
+  }
+
+  </script>
+<br>
+<br>
+  <a href="https://drive.google.com/file/d/1zGX5UA6tlhRfNkz1DZi961xGtIl3F3zQ/view?usp=sharing"><center>マルバツクイズ（著作権・肖像権）の解答・解説</center></a>
+
+</body>
+</html>
